@@ -1,0 +1,24 @@
+﻿<Window x:Class="PersonApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PersonApp" xmlns:views="clr-namespace:Person.Views"
+        xmlns:vms="clr-namespace:Person.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800">
+    <Grid Margin="10 10 0 0">
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type vms:InputUserDataViewModel}">
+                <views:InputUserDataView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vms:ShowUserDataViewModel}">
+                <views:ShowUserDataView/>
+            </DataTemplate>
+        </Grid.Resources>
+
+        <ContentControl Content="{Binding CurrentViewModel}"/>
+
+
+    </Grid>
+</Window>
